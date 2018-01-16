@@ -3,7 +3,7 @@ dependencies: []
 
 galaxy_info:
   author: drew-russell
-  description: Rubrik Connector installation for RedHat and Ubuntu.
+  description: Rubrik Connector installation for RedHat, Debian, and Windows.
   company: "Rubrik"
   license: "license (BSD, MIT)"
   min_ansible_version: 1.8
