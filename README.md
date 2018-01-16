@@ -1,7 +1,7 @@
 Ansible Role: Rubrik Connector
 =========
 
-An Ansible Role that installs the Rubrik Connector on Linux (RedHat, Debian and Windows) machines.
+An Ansible Role that installs the Rubrik Connector on Linux (RedHat and Debian) and Window machines.
 
 Role Variables
 --------------
