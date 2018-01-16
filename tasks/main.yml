@@ -1,0 +1,14 @@
+---
+# # Variable setup.
+# - name: Include the Rubrik Cluster IP Variable
+#   include_vars: "main.yml"
+
+# Setup/install tasks.
+- include: setup-RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- include: setup-Debian.yml
+  when: ansible_os_family == 'Debian'
+
+- include: setup-Windows.yml
+  when: ansible_os_family == 'Windows'

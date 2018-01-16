@@ -1,0 +1,33 @@
+---
+- name: Create a Temporary Download Location
+  win_file:
+    path: C:\Temp
+    state: directory
+
+- name: Download the Rubrik Connector
+  win_get_url:
+    url: "https://{{ rubrik_cluster_ip }}/connector/RubrikBackupService.zip"
+    dest: C:\Temp\RubrikBackupService.zip
+    validate_certs: no
+    force: no
+
+- name: Unzip the Connector Archive
+  win_unzip:
+    src: C:\Temp\RubrikBackupService.zip
+    dest: C:\Temp\
+
+- name: Install the Rubrik Connector
+  win_package:
+    path: C:\Temp\RubrikBackupService.msi
+    state: present
+    creates_service: 'Rubrik Backup Service'
+    wait: yes
+
+- name: Set Logon for the Rubrik Connector Service
+  win_service:
+    username: "{{ ansible_user }}"
+    password: "{{ ansible_password }}"
+    name: 'Rubrik Backup Service'
+
+
+    

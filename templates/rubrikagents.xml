@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+    <short>Rubrik Backup Service</short>
+    <description>This service opens ports 12800 and 12801 to allow a Rubrik cluster to contact the Rubrik Backup Agents on this machine in order to perform backup-related operations.</description>
+    <port protocol="tcp" port="12800"/>
+    <port protocol="tcp" port="12801"/>
+</service>

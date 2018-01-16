@@ -1,0 +1,40 @@
+---
+- name: Download the Rubrik Connector
+  get_url:
+    url: "https://{{ rubrik_cluster_ip }}/connector/rubrik-agent.x86_64.rpm"
+    dest: /tmp/rubrik-agent.x86_64.rpm
+    validate_certs: no
+    force: no
+  
+- name: Install the Connector 
+  yum:
+    name: /tmp/rubrik-agent.x86_64.rpm
+    state: present
+
+- name: Start and Enable the Rubrik Services 
+  systemd:
+    name: rubrikagents
+    state: started
+    enabled: yes
+
+- name: Define the Rubrik Service for FirewallD
+  template:
+    src: rubrikagents.xml
+    dest: /etc/firewalld/services/
+
+- name: Restart FirewallD
+  service:
+    name: firewalld
+    state: restarted
+   
+- name: Add the Rubrik Service to FirewallD
+  firewalld:
+    zone: public
+    service: rubrikagents
+    permanent: yes
+    state: enabled
+
+- name: Restart FirewallD
+  service:
+    name: firewalld
+    state: restarted

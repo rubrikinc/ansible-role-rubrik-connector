@@ -1,0 +1,3 @@
+---
+# vars file for rubrik-connector
+rubrik_cluster_ip: "172.21.8.51"
