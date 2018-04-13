@@ -1,0 +1,7 @@
+- hosts: all
+  roles:
+    - rubrik-devops.rubrik-connector
+  gather_facts: true
+  connection: local
+  vars:
+    rubrik_cluster_ip: "172.21.8.53"

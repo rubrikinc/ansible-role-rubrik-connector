@@ -1,0 +1,19 @@
+---
+resources:
+- name: github-repo
+  type: git
+  source:
+    uri: https://github.com/rubrik-devops/ansible-role-rubrik-connector.git
+    branch: devel
+
+jobs:
+- name: Validate the Rubrik Connector Ansible Role
+  public: true
+  plan:
+  - get: github-repo
+
+  - task: Validation - Ubuntu 17.10 with Ansible v2.5.0
+    file: github-repo/tests/config_files/ubuntu17.10-2.5.0.yml
+
+  - task: Validation - Ubuntu 17.10 with Ansible v2.4.4
+    file: github-repo/tests/config_files/ubuntu17.10-2.4.4.yml
