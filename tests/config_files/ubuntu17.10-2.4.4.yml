@@ -10,5 +10,4 @@ inputs:
   - name: github-repo
 
 run:
-  prun:
     path: github-repo/tests/execute-test.sh
