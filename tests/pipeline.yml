@@ -7,13 +7,70 @@ resources:
     branch: devel
 
 jobs:
-- name: Validate the Rubrik Connector Ansible Role
-  public: true
+# Ubuntu 17.10
+- name: Ubuntu 17.10 with Ansible v2.5.0 
   plan:
   - get: github-repo
+    trigger: true
 
-  - task: Validation - Ubuntu 17.10 with Ansible v2.5.0
+  - task: Validate the Ansible Playbook
     file: github-repo/tests/config_files/ubuntu17.10-2.5.0.yml
 
-  - task: Validation - Ubuntu 17.10 with Ansible v2.4.4
+- name: Ubuntu 17.10 with Ansible v2.4.4
+  plan:
+  - get: github-repo
+    trigger: true
+
+  - task: Validate the Ansible Playbook
     file: github-repo/tests/config_files/ubuntu17.10-2.4.4.yml
+
+# Ubuntu 16.04
+- name: Ubuntu 16.04 with Ansible v2.5.0 
+  plan:
+  - get: github-repo
+    trigger: true
+
+  - task: Validate the Ansible Playbook
+    file: github-repo/tests/config_files/ubuntu16.04-2.5.0.yml
+
+- name: Ubuntu 16.04 with Ansible v2.4.4
+  plan:
+  - get: github-repo
+    trigger: true
+
+  - task: Validate the Ansible Playbook
+    file: github-repo/tests/config_files/ubuntu16.04-2.4.4.yml
+
+# CentOS 7
+- name: CentOS 7 with Ansible v2.5.0 
+  plan:
+  - get: github-repo
+    trigger: true
+
+  - task: Validate the Ansible Playbook
+    file: github-repo/tests/config_files/centos7-2.5.0.yml
+
+- name: CentOS 7 with Ansible v2.4.4
+  plan:
+  - get: github-repo
+    trigger: true
+
+  - task: Validate the Ansible Playbook
+    file: github-repo/tests/config_files/centos7-2.4.4.yml
+
+# CentOS 6
+- name: CentOS 6 with Ansible v2.5.0 
+  plan:
+  - get: github-repo
+    trigger: true
+
+  - task: Validate the Ansible Playbook
+    file: github-repo/tests/config_files/centos6-2.5.0.yml
+
+- name: CentOS 6 with Ansible v2.4.4
+  plan:
+  - get: github-repo
+    trigger: true
+
+  - task: Validate the Ansible Playbook
+    file: github-repo/tests/config_files/centos6-2.4.4.yml

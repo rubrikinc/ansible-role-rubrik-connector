@@ -3,12 +3,11 @@ platform: linux
 image_resource:
   type: docker-image
   source: 
-    - repository: drewrussell/ansible-ubuntu17.10
+    - repository: drewrussell/ansible-centos6
     - tag: 2.4.4
 
 inputs:
   - name: github-repo
 
 run:
-  prun:
     path: github-repo/tests/execute-test.sh
