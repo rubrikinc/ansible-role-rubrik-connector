@@ -11,11 +11,19 @@
     name: /tmp/rubrik-agent.x86_64.rpm
     state: present
 
-- name: Start and Enable the Rubrik Services 
+- name: Start and Enable the Rubrik Services (RHEL 6)
+  service:
+    name: rubrikagents
+    state: started
+    enabled: yes
+  when: ansible_distribution_major_version == "6"
+
+- name: Start and Enable the Rubrik Services (RHEL 7+)
   systemd:
     name: rubrikagents
     state: started
     enabled: yes
+  when: ansible_distribution_major_version|int > 6
 
 - name: Define the Rubrik Service for FirewallD
   template:
