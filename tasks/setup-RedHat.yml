@@ -17,24 +17,24 @@
     state: started
     enabled: yes
 
-- name: Define the Rubrik Service for FirewallD
-  template:
-    src: rubrikagents.xml
-    dest: /etc/firewalld/services/
+# - name: Define the Rubrik Service for FirewallD
+#   template:
+#     src: rubrikagents.xml
+#     dest: /etc/firewalld/services/
 
-- name: Restart FirewallD
-  service:
-    name: firewalld
-    state: restarted
+# - name: Restart FirewallD
+#   service:
+#     name: firewalld
+#     state: restarted
    
-- name: Add the Rubrik Service to FirewallD
-  firewalld:
-    zone: public
-    service: rubrikagents
-    permanent: yes
-    state: enabled
+# - name: Add the Rubrik Service to FirewallD
+#   firewalld:
+#     zone: public
+#     service: rubrikagents
+#     permanent: yes
+#     state: enabled
 
-- name: Restart FirewallD
-  service:
-    name: firewalld
-    state: restarted
+# - name: Restart FirewallD
+#   service:
+#     name: firewalld
+#     state: restarted
