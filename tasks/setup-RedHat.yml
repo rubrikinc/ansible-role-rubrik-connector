@@ -1,24 +1,24 @@
 ---
-- name: Download the Rubrik Connector
+- name: (Red Hat) Download the Rubrik Connector
   get_url:
     url: "https://{{ rubrik_cluster_ip }}/connector/rubrik-agent.x86_64.rpm"
     dest: /tmp/rubrik-agent.x86_64.rpm
     validate_certs: no
     force: no
   
-- name: Install the Connector 
+- name: (Red Hat) Install the Connector 
   yum:
     name: /tmp/rubrik-agent.x86_64.rpm
     state: present
 
-- name: Start and Enable the Rubrik Services (RHEL 6)
+- name: (Red Hat) Start and Enable the Rubrik Services (RHEL 6)
   service:
     name: rubrikagents
     state: started
     enabled: yes
   when: ansible_distribution_major_version == "6"
 
-- name: Start and Enable the Rubrik Services (RHEL 7+)
+- name: (Red Hat) Start and Enable the Rubrik Services (RHEL 7+)
   systemd:
     name: rubrikagents
     state: started

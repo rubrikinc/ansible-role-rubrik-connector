@@ -1,12 +1,12 @@
 ---
-- name: Download the Rubrik Connector
+- name: (Debian) Download the Rubrik Connector
   get_url:
     url: "https://{{ rubrik_cluster_ip }}/connector/rubrik-agent.x86_64.deb"
     dest: /tmp/rubrik-agent.x86_64.deb
     validate_certs: no
     force: no
   
-- name: Install the Connector 
+- name: (Debian) Install the Connector 
   apt:
     deb: /tmp/rubrik-agent.x86_64.deb
     state: present
