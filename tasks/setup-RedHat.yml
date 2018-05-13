@@ -29,13 +29,13 @@
   template:
     src: rubrikagents.xml
     dest: /etc/firewalld/services/
-  when: configure_rhel_firewalld == yes
+  when: configure_rhel_firewalld == "yes"
 
 - name: Restart FirewallD
   service:
     name: firewalld
     state: restarted
-  when: configure_rhel_firewalld == yes
+  when: configure_rhel_firewalld == "yes"
    
 - name: Add the Rubrik Service to FirewallD
   firewalld:
@@ -43,10 +43,10 @@
     service: rubrikagents
     permanent: yes
     state: enabled
-  when: configure_rhel_firewalld == yes
+  when: configure_rhel_firewalld == "yes"
 
 - name: Restart FirewallD
   service:
     name: firewalld
     state: restarted
-  when: configure_rhel_firewalld == yes
+  when: configure_rhel_firewalld == "yes"
