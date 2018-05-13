@@ -29,16 +29,14 @@
   iptables:
     chain: INPUT
     protocol: tcp
-    destination_port: {{ item }}
-    source: {{ rubrik_cluster_ip }}
+    destination_port: "{{ item }}"
+    source: "{{ rubrik_cluster_ip }}"
     jump: ACCEPT
     comment: "Opens port to allow a Rubrik cluster to contact the Rubrik Backup Agents on this machine in order to perform backup-related operations."
   with_items:
      - 12800
      - 12801
   when: configure_rhel_firewalld and ansible_distribution_major_version == "6"
-
-
 
 - name: Define the Rubrik Service for FirewallD (RHEL 7+)
   template:
