@@ -29,23 +29,24 @@
   template:
     src: rubrikagents.xml
     dest: /etc/firewalld/services/
-  when: configure_rhel_firewalld
+  when: configure_rhel_firewalld and ansible_distribution_major_version|int > 6
 
 - name: Restart FirewallD
   service:
     name: firewalld
     state: restarted
-  when: configure_rhel_firewalld
+  when: configure_rhel_firewalld and ansible_distribution_major_version|int > 6
+
 - name: Add the Rubrik Service to FirewallD
   firewalld:
     zone: public
     service: rubrikagents
     permanent: yes
     state: enabled
-  when: configure_rhel_firewalld
+  when: configure_rhel_firewalld and ansible_distribution_major_version|int > 6
 
 - name: Restart FirewallD
   service:
     name: firewalld
     state: restarted
-  when: configure_rhel_firewalld
+  when: configure_rhel_firewalld and ansible_distribution_major_version|int > 6
