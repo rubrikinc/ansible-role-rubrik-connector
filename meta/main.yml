@@ -16,5 +16,5 @@ galaxy_info:
       versions:
       - Xenial Xerus
       - Artful Aardvark
-  galaxy_tags:
-    - ['Cloud', 'Rubrik']
+  galaxy_tags: ['Cloud', 'Rubrik']
+
