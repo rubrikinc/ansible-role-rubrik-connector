@@ -14,7 +14,7 @@ galaxy_info:
       - 7
     - name: Ubuntu
       versions:
-      - Xenial Xerus
-      - Artful Aardvark
+      - xenial
+      - artful
   galaxy_tags: ['Cloud', 'Rubrik']
 
