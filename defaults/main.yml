@@ -1,2 +1,3 @@
 ---
 # defaults file for rubrik-connector
+configure_rhel_firewalld: yes

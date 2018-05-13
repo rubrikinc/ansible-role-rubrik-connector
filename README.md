@@ -11,9 +11,17 @@ None.
 Role Variables
 --------------
 
+**Required**
+
 | Variable  |  Description |
 |---|---|
 | rubrik_cluster_ip  | IP Address of a Rubrik Node in the Cluster and needs to be defined in order to download the Connector.  |
+
+**Default (see `defaults/main.yml`)**
+
+| Variable  |  Default | Description  |
+|---|---|---|
+| configure_rhel_firewalld  | yes  | Yes/No flag to configure the Rubrik Service in FirewallD on RHEL 7 platoforms.|
 
 Dependencies
 ------------
