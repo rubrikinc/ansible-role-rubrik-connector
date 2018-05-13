@@ -21,7 +21,7 @@ Role Variables
 
 | Variable  |  Default | Description  |
 |---|---|---|
-| configure_rhel_firewalld  | yes  | Yes/No flag to configure the Rubrik Service in FirewallD on RHEL platoforms.|
+| configure_rhel_firewalld  | yes  | Yes/No flag to configure the Rubrik Service in FirewallD on RHEL 7 platoforms.|
 
 Dependencies
 ------------
