@@ -2,7 +2,6 @@ platform: linux
 
 image_resource:
   type: docker-image
-  privileged: true
   source: 
     - repository: drewrussell/ansible-centos6
     - tag: 2.4.0
