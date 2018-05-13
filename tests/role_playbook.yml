@@ -1,6 +1,6 @@
 - hosts: localhost
   roles:
-    - rubrik-devops.rubrik-connector
+    - ansible-role-rubrik-connector
   gather_facts: true
   connection: local
   vars:

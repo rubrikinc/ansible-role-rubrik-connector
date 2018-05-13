@@ -4,7 +4,7 @@ image_resource:
   type: docker-image
   source: 
     - repository: drewrussell/ansible-centos6
-    - tag: 2.4.4
+    - tag: 2.4.0
 
 inputs:
   - name: github-repo

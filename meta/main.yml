@@ -2,17 +2,19 @@
 dependencies: []
 
 galaxy_info:
-  author: drew-russell
-  description: Rubrik Connector installation for RedHat, Debian, and Windows.
+  author: Drew Russell
+  description: Rubrik Connector installation for RedHat, Ubuntu, and Windows.
   company: "Rubrik"
-  license: "license (BSD, MIT)"
-  min_ansible_version: 1.8
+  license: GPLv3
+  min_ansible_version: 2.4.0
   platforms:
     - name: EL
       versions:
-      - all
+      - 6
+      - 7
     - name: Ubuntu
       versions:
-      - all
+      - Xenial Xerus
+      - Artful Aardvark
   galaxy_tags:
-    - cloud
+    - ['Cloud', 'Rubrik']
