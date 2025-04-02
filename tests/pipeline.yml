@@ -3,7 +3,7 @@ resources:
 - name: github-repo
   type: git
   source:
-    uri: https://github.com/rubrik-devops/ansible-role-rubrik-connector.git
+    uri: https://github.com/rubrikinc/ansible-role-rubrik-connector.git
     branch: devel
 
 jobs:
