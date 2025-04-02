@@ -28,17 +28,6 @@ Dependencies
 
 None.
 
-Example Playbook
-----------------
-
-    - hosts: all
-      roles:
-        - rubrik-devops.rubrik-connector
-      gather_facts: true
-      vars:
-        rubrik_cluster_ip: ""
-
-
 License
 -------
 
